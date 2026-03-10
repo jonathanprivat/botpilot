@@ -49,13 +49,13 @@ a{text-decoration:none}
 .br{animation:botBlink 5s ease-in-out infinite .06s;transform-origin:152px 112px}
 .bm{animation:botMouth 3s ease-in-out infinite,botMouthGlow 4s ease-in-out infinite}
 /* Nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;transition:all .4s;border-bottom:1px solid transparent}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;padding:0 40px;transition:all .4s;border-bottom:1px solid transparent;gap:8px}
 .nav.scrolled{background:var(--bg-nav);backdrop-filter:blur(20px) saturate(1.2);border-bottom-color:var(--border)}
 .nav-link{color:var(--text-m);font-size:14px;font-weight:500;transition:color .3s;letter-spacing:.3px;cursor:pointer}
 .nav-link:hover{color:var(--text)}
 .nav-logo{display:flex;align-items:center;gap:8px}
 .nav-logo span{font-weight:800;font-size:18px;letter-spacing:-.5px;transition:color .4s}
-.nav-right{display:flex;align-items:center;gap:28px}
+.nav-right{display:flex;align-items:center;gap:28px;margin-left:auto}
 .android-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:6px;background:color-mix(in srgb,var(--green) 10%,transparent);font-size:9px;font-weight:700;color:var(--green);letter-spacing:1px;transition:all .4s}
 .cta-btn{background:var(--green);color:#000;border:none;padding:9px 22px;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;transition:background .3s;font-family:inherit}
 .grad-text{background:linear-gradient(135deg,var(--green),var(--green-lt));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
@@ -221,24 +221,20 @@ footer{border-top:1px solid var(--border);padding:48px 40px;transition:border-co
     <a class="nav-link" onclick="scrollTo_('modes')">Modes</a>
     <a class="nav-link" onclick="scrollTo_('how-it-works')">How It Works</a>
     <a class="nav-link" onclick="scrollTo_('why-botpilot')">Why BotPilot</a>
-    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
-      <svg class="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a0a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
     <button class="cta-btn" onclick="scrollTo_('download')">Download App</button>
   </div>
-  <div style="display:flex;align-items:center;gap:8px" class="mobile-only">
-    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" style="width:40px;height:40px">
-      <svg class="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a0a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+    <svg class="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a0a0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+  <div class="mobile-only">
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <svg id="menuIco" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       <svg id="closeIco" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
 </nav>
-<style>.mobile-only{display:none}@media(max-width:899px){.mobile-only{display:flex}}</style>
+<style>.mobile-only{display:none}@media(max-width:899px){.mobile-only{display:flex;align-items:center}}</style>
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
