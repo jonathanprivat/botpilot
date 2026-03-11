@@ -1,0 +1,27 @@
+---
+import BotIcon from "../ui/BotIcon.astro";
+import PlayBadge from "../ui/PlayBadge.astro";
+---
+
+<section class="section reveal" id="download">
+  <div class="cta-box">
+    <div class="cta-glow"></div>
+    <BotIcon size={80} id="cta" />
+    <h2>Ready to let your phone do the work?</h2>
+    <p>Install BotPilot, pick a mode, set your rates, and put your phone down. No sign-up required.</p>
+    <div style="margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:10px">
+      <PlayBadge />
+      <span class="hint">Android&trade; 10+ &middot; No root &middot; No API keys</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.section{padding:100px 40px}
+.cta-box{max-width:700px;margin:0 auto;text-align:center;padding:64px 48px;background:linear-gradient(135deg,var(--card),color-mix(in srgb,var(--green) 4%,transparent));border-radius:28px;border:1px solid color-mix(in srgb,var(--green) 8%,transparent);position:relative;overflow:hidden;transition:background .4s,border-color .4s}
+.cta-box h2{font-size:36px;font-weight:800;margin-top:16px;letter-spacing:-1px;transition:color .4s}
+.cta-box p{color:var(--text-m);font-size:16px;margin-top:10px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.6;transition:color .4s}
+.cta-glow{position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--green) 5%,transparent),transparent);filter:blur(40px)}
+.hint{color:var(--text-d);font-size:12px;transition:color .4s}
+@media(max-width:639px){.section{padding:60px 16px}.cta-box{padding:36px 20px;border-radius:18px}.cta-box h2{font-size:24px}.cta-box p{font-size:13px}}
+</style>

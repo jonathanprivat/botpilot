@@ -1,0 +1,95 @@
+---
+import { siteConfig } from "../../config/site";
+
+interface Props {
+  type: "WebSite" | "SoftwareApplication" | "FAQPage";
+}
+
+const { type } = Astro.props;
+
+let schema: Record<string, unknown> = {};
+
+if (type === "WebSite") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+    },
+  };
+} else if (type === "SoftwareApplication") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: siteConfig.name,
+    description: siteConfig.description,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Android 10+",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    featureList: [
+      "Auto-watch Instagram stories",
+      "Auto-like posts in feed",
+      "GIF comment automation",
+      "Emoji story reactions",
+      "Comment liking",
+      "Location-based browsing",
+      "Hashtag-based browsing",
+      "Configurable rate sliders",
+      "Five smart speed modes",
+      "Live HUD overlay",
+    ],
+    softwareRequirements: "Android 10 or higher",
+    permissions: "Accessibility Service",
+    isAccessibleForFree: true,
+  };
+} else if (type === "FAQPage") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Does BotPilot need my Instagram password?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. BotPilot controls the real Instagram app already logged in on your phone. You never enter your password into BotPilot.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does BotPilot work with two-factor authentication?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Since BotPilot controls the app you're already signed into, 2FA is never an issue.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is BotPilot a cloud service?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. BotPilot runs entirely on your Android device. No data leaves your phone.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What Android version is required?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Android 10 or higher. No root access is needed.",
+        },
+      },
+    ],
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

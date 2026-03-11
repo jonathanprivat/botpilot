@@ -1,0 +1,63 @@
+---
+import { siteConfig } from "../../config/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = siteConfig.tagline,
+  description = siteConfig.description,
+  canonical = siteConfig.url,
+  ogImage = siteConfig.ogImage,
+  ogType = "website",
+  noindex = false,
+} = Astro.props;
+
+const pageTitle = title === siteConfig.tagline
+  ? `${siteConfig.name} — ${title}`
+  : `${title} | ${siteConfig.name}`;
+
+const ogImageUrl = ogImage.startsWith("http")
+  ? ogImage
+  : new URL(ogImage, siteConfig.url).toString();
+---
+
+<!-- Primary Meta Tags -->
+<title>{pageTitle}</title>
+<meta name="title" content={pageTitle} />
+<meta name="description" content={description} />
+<meta name="author" content={siteConfig.author} />
+<meta name="keywords" content="Instagram automation, Instagram bot, Android, auto like, auto story, GIF comments, engagement tool, on-device bot, no password, BotPilot" />
+{!noindex && <meta name="robots" content="index, follow" />}
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${siteConfig.name} - ${siteConfig.tagline}`} />
+<meta property="og:site_name" content={siteConfig.name} />
+<meta property="og:locale" content={siteConfig.locale} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonical} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- Theme -->
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
+<meta name="color-scheme" content="dark light" />

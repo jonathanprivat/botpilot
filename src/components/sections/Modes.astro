@@ -1,0 +1,48 @@
+<section class="section reveal" id="modes">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="sl">Four Modes</div>
+      <h2>Pick a mode. Let it run.</h2>
+      <p>Each mode targets a different part of Instagram. Mix and match, or run one at a time.</p>
+    </div>
+    <div class="card-grid modes-grid">
+      <div class="card">
+        <div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Stories</h3>
+        <p>Opens story circles on your feed, watches them, reacts with emojis, likes, and replies with random GIFs.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Feed</h3>
+        <p>Scrolls your home or following feed, likes posts, drops GIF comments, and likes other people's comments.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Location</h3>
+        <p>Searches any Instagram location &mdash; city, venue, landmark &mdash; and browses tagged posts and stories.</p>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg></div>
+        <h3>Hashtag</h3>
+        <p>Searches any hashtag, browses the post grid, and engages with content automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.section{padding:100px 40px}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:64px}
+.section-head h2{font-size:42px;font-weight:800;margin-top:12px;letter-spacing:-1.5px;transition:color .4s}
+.section-head p{color:var(--text-m);font-size:16px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;transition:color .4s}
+.sl{color:var(--green);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:700}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.modes-grid{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:32px 28px;transition:background .4s,border-color .4s}
+.card-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--green) 6%,transparent);border:1px solid color-mix(in srgb,var(--green) 8%,transparent);transition:all .4s}
+.card h3{font-size:16px;font-weight:700;margin-top:16px;letter-spacing:-.3px;transition:color .4s}
+.card p{font-size:13px;color:var(--text-m);margin-top:8px;line-height:1.6;transition:color .4s}
+@media(max-width:899px){.card-grid,.modes-grid{grid-template-columns:repeat(2,1fr)}.section-head h2{font-size:34px}}
+@media(max-width:639px){.section{padding:60px 16px}.section-head{margin-bottom:36px}.section-head h2{font-size:26px}.section-head p{font-size:14px}.sl{font-size:10px;letter-spacing:3px}.card-grid,.modes-grid{grid-template-columns:1fr}.card{padding:22px 18px}.card h3{font-size:15px}.card p{font-size:12px}}
+</style>

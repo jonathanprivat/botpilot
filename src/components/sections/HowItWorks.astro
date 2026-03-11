@@ -1,0 +1,27 @@
+<section class="section reveal" id="how-it-works">
+  <div class="steps">
+    <div class="section-head">
+      <div class="sl">How It Works</div>
+      <h2>Install. Enable. Go.</h2>
+    </div>
+    <div class="step"><div class="step-num">01</div><div><h3>Install from Google Play</h3><p>Download BotPilot and open it. No account creation, no sign-up, no API keys needed.</p></div></div>
+    <div class="step"><div class="step-num">02</div><div><h3>Enable the Accessibility Service</h3><p>Grant BotPilot the Accessibility Service permission, same as screen readers use. This lets it see and tap Instagram's UI.</p></div></div>
+    <div class="step"><div class="step-num">03</div><div><h3>Pick a mode and set your rates</h3><p>Choose Stories, Feed, Location, or Hashtag. Adjust the rate sliders for likes, GIF reacts, emoji reactions, and comment likes.</p></div></div>
+    <div class="step"><div class="step-num">04</div><div><h3>Hit start and put it down</h3><p>BotPilot opens Instagram and works through your session automatically. Watch the live log or just let it run in your pocket.</p></div></div>
+  </div>
+</section>
+
+<style>
+.section{padding:100px 40px}
+.section-head{text-align:center;margin-bottom:64px}
+.section-head h2{font-size:42px;font-weight:800;margin-top:12px;letter-spacing:-1.5px;transition:color .4s}
+.sl{color:var(--green);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:700}
+.steps{max-width:800px;margin:0 auto}
+.step{display:flex;gap:32px;align-items:flex-start;padding:36px 0;border-bottom:1px solid var(--border);transition:border-color .4s}
+.step:last-child{border-bottom:none}
+.step-num{font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:800;color:color-mix(in srgb,var(--green) 12%,transparent);line-height:1;flex-shrink:0;width:70px}
+.step h3{font-size:22px;font-weight:700;letter-spacing:-.5px;transition:color .4s}
+.step p{font-size:15px;color:var(--text-m);margin-top:6px;line-height:1.6;transition:color .4s}
+@media(max-width:899px){.section-head h2{font-size:34px}.step{gap:18px}.step-num{font-size:28px;width:45px}.step h3{font-size:18px}.step p{font-size:13px}}
+@media(max-width:639px){.section{padding:60px 16px}.section-head{margin-bottom:36px}.section-head h2{font-size:26px}.sl{font-size:10px;letter-spacing:3px}.step{padding:28px 0;gap:14px}.step-num{font-size:24px;width:38px}.step h3{font-size:16px}.step p{font-size:13px}}
+</style>

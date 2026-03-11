@@ -1,0 +1,33 @@
+<section class="section reveal" id="why-botpilot" style="background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--green) 2%,transparent),transparent)">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="sl">Why BotPilot</div>
+      <h2>Not another cloud bot</h2>
+      <p>BotPilot runs directly on your device. No servers, no browser extensions, no API tokens.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card"><div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>No Credentials Needed</h3><p>You never enter your Instagram password into BotPilot. It taps the real app already logged in on your phone.</p></div>
+      <div class="card"><div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Very Low Detection Risk</h3><p>Uses the real Instagram app on a real device: no API calls, no browser fingerprints, no headless sessions.</p></div>
+      <div class="card"><div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><h3>Works with 2FA</h3><p>Since BotPilot controls the app you're already signed into, two-factor auth is never an issue.</p></div>
+      <div class="card"><div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>No Data Leaves Your Device</h3><p>No screenshots, no server connections, no analytics sent anywhere. Everything stays on your phone.</p></div>
+      <div class="card"><div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div><h3>Fully Configurable</h3><p>Every interaction has its own rate slider. Choose from five smart speed modes with randomized delays for natural pacing.</p></div>
+      <div class="card"><div class="card-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3>GIF Comments: The Flagship</h3><p>Picks a random trending GIF from Instagram's own picker and posts it as a comment. No AI server, no keyword generation.</p></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.section{padding:100px 40px}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:64px}
+.section-head h2{font-size:42px;font-weight:800;margin-top:12px;letter-spacing:-1.5px;transition:color .4s}
+.section-head p{color:var(--text-m);font-size:16px;margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;transition:color .4s}
+.sl{color:var(--green);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-weight:700}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:32px 28px;transition:background .4s,border-color .4s}
+.card-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--green) 6%,transparent);border:1px solid color-mix(in srgb,var(--green) 8%,transparent);transition:all .4s}
+.card h3{font-size:16px;font-weight:700;margin-top:16px;letter-spacing:-.3px;transition:color .4s}
+.card p{font-size:13px;color:var(--text-m);margin-top:8px;line-height:1.6;transition:color .4s}
+@media(max-width:899px){.card-grid{grid-template-columns:repeat(2,1fr)}.section-head h2{font-size:34px}}
+@media(max-width:639px){.section{padding:60px 16px}.section-head{margin-bottom:36px}.section-head h2{font-size:26px}.section-head p{font-size:14px}.sl{font-size:10px;letter-spacing:3px}.card-grid{grid-template-columns:1fr}.card{padding:22px 18px}.card h3{font-size:15px}.card p{font-size:12px}}
+</style>

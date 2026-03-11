@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+:root {
+  --green: #2dd4a0;
+  --green-lt: #3af0b8;
+  --bg: #0a0a0a;
+  --bg-nav: #0a0a0ae8;
+  --card: #111113;
+  --border: #1e1e22;
+  --text: #e8e8ec;
+  --text-m: #6e6e7a;
+  --text-d: #3a3a44;
+  --grid: #e8e8ec;
+  --orb1: #2dd4a008;
+  --orb2: #2dd4a006;
+  --glow: #2dd4a012;
+  --menu-bg: #0a0a0af5;
+  --sel-bg: #2dd4a030;
+  --sel-c: #2dd4a0;
+  --phone-bg: #181818;
+  --phone-bz: #222226;
+}
+
+.light {
+  --green: #1aad82;
+  --green-lt: #22c896;
+  --bg: #f5f5f7;
+  --bg-nav: #f5f5f7e8;
+  --card: #ffffff;
+  --border: #e0e0e6;
+  --text: #111118;
+  --text-m: #6b6b78;
+  --text-d: #b0b0ba;
+  --grid: #111118;
+  --orb1: #1aad820a;
+  --orb2: #1aad8208;
+  --glow: #1aad8215;
+  --menu-bg: #f5f5f7f0;
+  --sel-bg: #1aad8230;
+  --sel-c: #1aad82;
+  --phone-bg: #f0f0f2;
+  --phone-bz: #d8d8de;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+}
+
+::selection {
+  background: var(--sel-bg);
+  color: var(--sel-c);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseRing {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -20px);
+  }
+  50% {
+    transform: translate(-10px, 15px);
+  }
+  75% {
+    transform: translate(20px, 10px);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-25px, 15px);
+  }
+  50% {
+    transform: translate(15px, -25px);
+  }
+  75% {
+    transform: translate(-15px, 20px);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes botFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes botEyeScan {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes botBlink {
+  0%,
+  88%,
+  100% {
+    transform: scaleY(1);
+  }
+  91% {
+    transform: scaleY(0.08);
+  }
+  94% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes botMouth {
+  0% {
+    d: path("M100,178 L112,164 L124,178 L136,164 L148,178");
+  }
+  33% {
+    d: path("M96,176 L110,166 L124,176 L138,166 L152,176");
+  }
+  66% {
+    d: path("M100,180 L112,162 L124,180 L136,162 L148,180");
+  }
+  100% {
+    d: path("M100,178 L112,164 L124,178 L136,164 L148,178");
+  }
+}
+
+@keyframes botMouthGlow {
+  0%,
+  100% {
+    stroke: var(--green);
+    filter: drop-shadow(0 0 4px rgba(45, 212, 160, 0.3));
+  }
+  50% {
+    stroke: var(--green-lt);
+    filter: drop-shadow(0 0 8px rgba(45, 212, 160, 0.5));
+  }
+}
+
+@keyframes botBreath {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.015);
+  }
+}
+
+/* Bot animation classes */
+.bf { animation: botFloat 5s ease-in-out infinite; }
+.bh { animation: botBreath 4.3s ease-in-out infinite; transform-origin: 128px 112px; }
+.be { animation: botEyeScan 6s ease-in-out infinite; }
+.bl { animation: botBlink 5s ease-in-out infinite; transform-origin: 104px 112px; }
+.br { animation: botBlink 5s ease-in-out infinite 0.06s; transform-origin: 152px 112px; }
+.bm { animation: botMouth 3s ease-in-out infinite, botMouthGlow 4s ease-in-out infinite; }

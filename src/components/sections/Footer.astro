@@ -1,0 +1,30 @@
+---
+import BotIcon from "../ui/BotIcon.astro";
+---
+
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:8px">
+      <BotIcon size={24} id="footer" />
+      <span style="font-weight:700;font-size:14px;transition:color .4s">BotPilot</span>
+      <span class="android-badge" style="margin-left:4px;display:inline-flex;align-items:center;padding:3px 10px;border-radius:6px;background:color-mix(in srgb,var(--green) 10%,transparent);font-size:9px;font-weight:700;color:var(--green);letter-spacing:1px">for Android&trade;</span>
+    </div>
+    <div class="footer-links">
+      <a href="#" class="footer-link">Privacy</a>
+      <a href="#" class="footer-link">Terms</a>
+      <a href="#" class="footer-link">Support</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+    <div class="footer-legal">&copy; 2026 BotPilot &middot; Google Play and the Google Play logo are trademarks of Google LLC.</div>
+  </div>
+</footer>
+
+<style>
+footer{border-top:1px solid var(--border);padding:48px 40px;transition:border-color .4s}
+.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-links{display:flex;gap:28px}
+.footer-link{color:var(--text-m);font-size:13px;font-weight:500;transition:color .3s;text-decoration:none}
+.footer-link:hover{color:var(--text)}
+.footer-legal{color:var(--text-d);font-size:10px;max-width:300px;line-height:1.5;transition:color .4s}
+@media(max-width:639px){.footer-inner{flex-direction:column;align-items:flex-start;gap:16px}footer{padding:28px 16px}.footer-links{gap:16px;flex-wrap:wrap}.footer-legal{font-size:9px}}
+</style>
