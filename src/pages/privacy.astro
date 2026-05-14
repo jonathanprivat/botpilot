@@ -1,0 +1,418 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/sections/Navbar.astro";
+import Footer from "../components/sections/Footer.astro";
+
+const lastUpdated = "May 14, 2026";
+const effectiveDate = "May 14, 2026";
+---
+
+<BaseLayout
+  title="Privacy Policy — BotPilot"
+  description="How BotPilot handles your data across the Android app and BotPilot Creator for iOS."
+  canonical="https://botpilot.org/privacy"
+>
+  <Navbar />
+
+  <main class="legal">
+    <div class="legal-bg">
+      <div class="legal-orb legal-orb1"></div>
+      <div class="legal-orb legal-orb2"></div>
+    </div>
+
+    <article class="legal-inner">
+      <header class="legal-head">
+        <div class="badge-pill"><div class="pulse-dot"></div> LEGAL</div>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: {lastUpdated} · Effective: {effectiveDate}</p>
+        <p class="lede">
+          BotPilot ships two products under one brand. Each handles data
+          differently. This policy explains both, plainly.
+        </p>
+      </header>
+
+      <section>
+        <h2>1. Who we are</h2>
+        <p>
+          BotPilot is operated by <strong>1 MEDIA Studio LLC.</strong>
+          ("BotPilot", "we", "us"). Contact: <a href="mailto:email@jonathanprivat.com">email@jonathanprivat.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. The two products</h2>
+        <div class="card-grid">
+          <div class="legal-card">
+            <div class="card-label">Android</div>
+            <h3>BotPilot for Android</h3>
+            <p>
+              An on-device engagement app. It runs on your phone, drives the
+              real Instagram app's UI via Android's Accessibility Service, and
+              does not ship your Instagram session, password, content, or
+              activity to any server.
+            </p>
+          </div>
+          <div class="legal-card">
+            <div class="card-label green">iOS</div>
+            <h3>BotPilot Creator for iOS</h3>
+            <p>
+              A creator inbox + scheduler that connects to your Instagram
+              Professional account through Meta's official Instagram API
+              (Instagram Login). It runs partly on your phone and partly on our
+              backend at <code>api.botpilot.org</code>, which is required to
+              receive webhook events from Meta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. BotPilot for Android — data we handle</h2>
+        <p>
+          <strong>What stays on your phone:</strong> your Instagram login state
+          (already present in the Instagram app), the accounts you browse, the
+          posts/stories you view, the likes / GIF reactions / emoji reactions
+          you trigger, and the session counters shown in the in-app HUD.
+        </p>
+        <p>
+          <strong>What we collect:</strong> nothing personally identifying. We
+          do not see your Instagram username, password, DMs, followers, content
+          you engage with, or the people you engage with.
+        </p>
+        <p>
+          <strong>Optional anonymous diagnostics:</strong> if you opt in, we may
+          receive crash reports and anonymized usage counters (e.g. "Stories
+          mode ran successfully") through Google Play services. These never
+          include account data.
+        </p>
+        <p>
+          <strong>Accessibility permission:</strong> required for the app to
+          function. We use it only to read the on-screen state of the
+          Instagram app and dispatch tap/scroll/text actions. We do not capture,
+          transmit, or store screen contents.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. BotPilot Creator for iOS — data we handle</h2>
+        <p>
+          Because BotPilot Creator uses Meta's Instagram API on your behalf, we
+          process the data Meta delivers to our backend in order to power the
+          features you turn on. This is the data Meta authorizes us to receive
+          when you connect your Instagram Professional account.
+        </p>
+        <h3>4.1 What we receive from Instagram</h3>
+        <ul>
+          <li>Your Instagram user ID, username, profile picture URL, and account type (Business or Creator).</li>
+          <li>Direct messages within Instagram's 24-hour conversation window (sender, recipient, text/media payload, timestamps).</li>
+          <li>Comments on posts you own and basic metadata about the commenters Instagram exposes to us.</li>
+          <li>Media you choose to schedule (image, video, carousel) and the publication metadata.</li>
+          <li>Account-level insights you turn on (followers, reach, engagement) at the granularity Meta provides.</li>
+          <li>Webhook events Meta sends us when you receive a new DM, comment, mention, or response feedback.</li>
+        </ul>
+        <h3>4.2 Why we hold it</h3>
+        <ul>
+          <li><strong>Inbox</strong>: store recent DMs so you can read and reply from the app.</li>
+          <li><strong>Auto-reply rules</strong>: match incoming DMs/comments against keyword rules you defined and send the reply you authored.</li>
+          <li><strong>Scheduled posts</strong>: hold queued media until your chosen publish time, then submit it to Meta.</li>
+          <li><strong>Analytics</strong>: snapshot daily metrics so you can see trends over time.</li>
+        </ul>
+        <h3>4.3 How long we hold it</h3>
+        <ul>
+          <li>Direct messages: 90 days after the 24-hour window closes, or until you delete the conversation, whichever comes first.</li>
+          <li>Comments: 90 days after creation.</li>
+          <li>Scheduled posts: until the scheduled publish time + 7 days for retry/audit, then deleted.</li>
+          <li>Analytics snapshots: 24 months.</li>
+          <li>Access tokens: stored encrypted at rest; rotated by Meta's 60-day refresh; revoked if you disconnect.</li>
+        </ul>
+        <h3>4.4 What we never collect from iOS</h3>
+        <ul>
+          <li>Your Instagram password (Meta handles authentication; we never see it).</li>
+          <li>Followers' contact info, location, payment data, or anything beyond what Meta returns for the features you enable.</li>
+          <li>Content from accounts you don't own (except the comments and DMs people send to your account).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. How we share data</h2>
+        <p>
+          We do not sell or rent your data. We only share it with:
+        </p>
+        <ul>
+          <li>
+            <strong>Meta Platforms, Inc.</strong> — to send the actions you
+            authorize (post a scheduled post, reply to a DM, etc.) back to
+            Instagram on your behalf.
+          </li>
+          <li>
+            <strong>Infrastructure providers</strong> we use to run BotPilot
+            Creator's backend: DigitalOcean (hosting), and Firebase Cloud
+            Messaging (push notifications). These providers process data on our
+            behalf under standard data processing agreements.
+          </li>
+          <li>
+            <strong>Payment processors</strong> if you subscribe: Apple (via
+            in-app purchase) or Stripe (via web-billing). They handle billing
+            data; we receive only the subscription status.
+          </li>
+          <li>
+            <strong>Legal obligations</strong> — if compelled by valid legal
+            process, we will disclose narrowly and notify you when permitted.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. Your rights</h2>
+        <ul>
+          <li><strong>Disconnect</strong>: revoke our access from your Instagram settings or the in-app "Disconnect" action; we delete tokens immediately and your stored data within 30 days.</li>
+          <li><strong>Export</strong>: email us at <a href="mailto:email@jonathanprivat.com">email@jonathanprivat.com</a> for a copy of the data tied to your account.</li>
+          <li><strong>Delete</strong>: email us at the same address to erase your account and all associated data within 30 days.</li>
+          <li><strong>EU/UK residents</strong>: you have GDPR rights to access, rectify, port, erase, restrict, or object. Contact us with the request type and we'll respond within 30 days.</li>
+          <li><strong>California residents</strong>: under CCPA/CPRA, you have rights to know, delete, correct, and opt out of "sale" or "sharing". We do not sell or share your data for cross-context behavioral advertising.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>7. Security</h2>
+        <p>
+          We store access tokens encrypted at rest, transmit all backend traffic
+          over TLS, and limit access to operators on a need-to-know basis. No
+          system is perfectly secure; if we discover a breach affecting your
+          data, we will notify you and the relevant authorities within the
+          timeframes required by law.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Children</h2>
+        <p>
+          BotPilot is not directed at children under 13 (or the applicable age
+          in your jurisdiction). We do not knowingly collect data from
+          children; if you believe a child has provided us data, contact us and
+          we will delete it.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. International transfers</h2>
+        <p>
+          Our infrastructure is located in the United States. If you use
+          BotPilot from outside the US, your data will be transferred to and
+          processed in the US under standard contractual clauses or equivalent
+          safeguards where required.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Changes to this policy</h2>
+        <p>
+          We will update this policy when our products or practices change. The
+          "Last updated" date at the top reflects the most recent change. For
+          material changes, we will notify you in the app or by email at least
+          7 days before the change takes effect.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Contact</h2>
+        <p>
+          Questions, requests, or complaints:
+          <a href="mailto:email@jonathanprivat.com">email@jonathanprivat.com</a>.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+.legal {
+  position: relative;
+  padding: 120px 24px 80px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.legal-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.legal-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+.legal-orb1 {
+  top: -200px;
+  right: -150px;
+  background: var(--orb1);
+  animation: float1 24s ease-in-out infinite;
+}
+.legal-orb2 {
+  bottom: -200px;
+  left: -150px;
+  background: var(--orb2);
+  animation: float2 28s ease-in-out infinite;
+}
+.legal-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.legal-head {
+  margin-bottom: 48px;
+}
+.legal-head h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 20px 0 12px;
+  line-height: 1.05;
+}
+.legal-head .meta {
+  color: var(--text-m);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+.legal-head .lede {
+  color: var(--text-m);
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 600px;
+}
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--green) 10%, transparent);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  position: relative;
+}
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--green);
+  opacity: 0.4;
+  animation: pulseRing 1.8s ease-out infinite;
+}
+.legal section {
+  margin-bottom: 36px;
+}
+.legal h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.legal h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 18px 0 10px;
+  color: var(--text);
+}
+.legal p,
+.legal li {
+  color: var(--text-m);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.legal p strong,
+.legal li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.legal ul {
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+.legal li {
+  margin-bottom: 8px;
+}
+.legal a {
+  color: var(--green);
+  border-bottom: 1px solid color-mix(in srgb, var(--green) 30%, transparent);
+  transition: border-color 0.3s;
+}
+.legal a:hover {
+  border-bottom-color: var(--green);
+}
+.legal code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.legal-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+.legal-card h3 {
+  margin-top: 8px;
+}
+.legal-card p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.card-label {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--text-m) 18%, transparent);
+  color: var(--text-m);
+}
+.card-label.green {
+  background: color-mix(in srgb, var(--green) 12%, transparent);
+  color: var(--green);
+}
+@media (max-width: 639px) {
+  .legal {
+    padding: 96px 18px 60px;
+  }
+  .legal h2 {
+    font-size: 19px;
+  }
+  .legal p,
+  .legal li {
+    font-size: 14.5px;
+  }
+}
+</style>
